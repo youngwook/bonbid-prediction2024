@@ -290,7 +290,7 @@ def run():
             out = np.where(out>0.95, 1, 0).astype(np.uint8)
             out = origin_crop(out, metainfo['size'])
 
-        output_2_year_neurocognitive_outcome.append(1 if np.sum(out)>10 else 0)
+        output_2_year_neurocognitive_outcome.append(1 if np.sum(out)>500 else 0)
         del out, znadcnth_input, img, images, input_skull_stripped_adc, z_adc, zadcb
         gc.collect()
 
